@@ -1,5 +1,5 @@
 <?php
-echo 'Hello heroku!';
+echo 'Зеленые матизы нужны этому миру!';
 //require_once __DIR__ . '/vendor/autoload.php';
 //
 //use Telegram\Bot\Api;
