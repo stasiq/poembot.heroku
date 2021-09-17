@@ -4,6 +4,7 @@ echo 'he';
 // подключаемся к API
 require_once("vendor/autoload.php");
 use Faker\Factory as Faker;
+use App\models\PoemModel as PoemModel;
 
 $faker = Faker::create('ru_RU');
 // создаем переменную бота
@@ -27,6 +28,13 @@ $bot->command('help', function ($message) use ($bot) {
 });
 $bot->command('getpic', function ($message) use ($bot) {
     $answer = 'Изображение:';
+    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $bot->sendPhoto($message->getChat()->getId(), $pic);
+});
+$bot->command('sad', function ($message) use ($bot) {
+    $row = new PoemModel::getItem('sad');
+    $answer = $row[0];
     $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
