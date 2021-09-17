@@ -26,4 +26,4 @@ class Db
         }
         return $instance::$db;
     }
-};
+}

@@ -56,6 +56,7 @@ class PoemModel
 //     $row = $query->fetch(PDO::FETCH_OBJ);
 //     return $row;
     }
+
     public static function getList()
     {
         $db = Db::getConnect();
