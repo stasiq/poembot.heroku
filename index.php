@@ -46,7 +46,7 @@ $bot->command('sad', function ($message) use ($bot) {
 });
 
 $bot->command('fun', function ($message) use ($bot) {
-    $row =  PoemModel::getItem('sad');
+    $row =  PoemModel::getItem('fun');
     $title = $row[0];
     $text = $row[1];
     $pic = $row[2];
@@ -56,7 +56,7 @@ $bot->command('fun', function ($message) use ($bot) {
 });
 
 $bot->command('soul', function ($message) use ($bot) {
-    $row =  PoemModel::getItem('sad');
+    $row =  PoemModel::getItem('soul');
     $title = $row[0];
     $text = $row[1];
     $pic = $row[2];
