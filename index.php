@@ -34,10 +34,24 @@ $bot->command('getpic', function ($message) use ($bot) {
 });
 $bot->command('sad', function ($message) use ($bot) {
     $row =  PoemModel::getItem('sad');
-    $answer = $row[0];
-    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
-    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $answer = $row[0] . $row[1];
+    $pic = $row[2];
     $bot->sendPhoto($message->getChat()->getId(), $pic);
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+$bot->command('fun', function ($message) use ($bot) {
+    $row =  PoemModel::getItem('sad');
+    $answer = $row[0] . $row[1];
+    $pic = $row[2];
+    $bot->sendPhoto($message->getChat()->getId(), $pic);
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+});
+$bot->command('soul', function ($message) use ($bot) {
+    $row =  PoemModel::getItem('sad');
+    $answer = $row[0] . $row[1];
+    $pic = $row[2];
+    $bot->sendPhoto($message->getChat()->getId(), $pic);
+    $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 $bot->command('bestcar', function ($message) use ($bot) {
     $answer = 'Зеленый матиз!:';
