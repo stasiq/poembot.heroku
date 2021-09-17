@@ -1,6 +1,6 @@
 <?php
 require_once("vendor/autoload.php");
-use App as PoemModel;
+use App\models\PoemModel as PoemModel;
 
 ?>
 <!doctype html>
@@ -34,6 +34,8 @@ use App as PoemModel;
 <h1>PoemBot</h1>
 
 <?php
+$PoemModel = new \App\models\PoemModel();
+var_dump($PoemModel);
 $rows = PoemModel::getList();
 
 ?>
