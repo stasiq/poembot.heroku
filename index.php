@@ -3,6 +3,7 @@ header('Content-Type: text/html; charset=utf-8');
 echo 'he';
 // подключаемся к API
 require_once("vendor/autoload.php");
+use Faker\Factory as Faker;
 
 // создаем переменную бота
 $token = "1980530629:AAGp6UbT3J_tJrLDfvbwrw7CaAp3w21cXYk";
@@ -25,13 +26,15 @@ $bot->command('help', function ($message) use ($bot) {
 });
 $bot->command('getpic', function ($message) use ($bot) {
     $answer = 'Изображение:';
-    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
+    $faker = Faker::create();
+
+    $pic = "<?= $faker->imageUrl(640, 480, 'animals', true)?>";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
 $bot->command('bestcar', function ($message) use ($bot) {
     $answer = 'Зеленый матиз!:';
-    $pic = "https://a.d-cd.net/4a1f644s-960.jpg";
+    $pic = "<?= $faker->imageUrl(640, 480, 'animals', true)?>";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });

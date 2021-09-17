@@ -22,7 +22,7 @@ class Db
             $options = Settings::$options;
             $instance = self::$instance;
             $instance = new self();
-            $instance::$db = new PDO("$driver:host=$host;dbname=$db_name;charset=$charset", $db_user, $db_pass, $options);
+            $instance::$db = new PDO("$driver:host=$host;dbname=$db_name;", $db_user, $db_pass, $options);
         }
         return $instance::$db;
     }

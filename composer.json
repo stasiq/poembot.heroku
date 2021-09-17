@@ -1,7 +1,8 @@
 {
     "name": "dev/poembot",
     "require": {
-        "telegram-bot/api": "^2.3"
+        "telegram-bot/api": "^2.3",
+        "fakerphp/faker": "^1.16"
     },
     "authors": [
         {
