@@ -1,7 +1,7 @@
 {
     "name": "dev/poembot",
     "require": {
-        "irazasyed/telegram-bot-sdk": "^3.4"
+        "telegram-bot/api": "^2.3"
     },
     "authors": [
         {
