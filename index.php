@@ -4,8 +4,7 @@ echo 'he';
 // подключаемся к API
 require_once("vendor/autoload.php");
 use App\models\PoemModel as PoemModel;
-$row = PoemModel::getList();
-var_dump($row);
+
 
 // создаем переменную бота
 $token = "1980530629:AAGp6UbT3J_tJrLDfvbwrw7CaAp3w21cXYk";
@@ -28,9 +27,8 @@ $bot->command('help', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 $bot->command('fun', function ($message) use ($bot) {
-    $answer = 'Изображение:';
-    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
-    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $row = PoemModel::getItem(1);
+    $pic = $row->image;
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
 $bot->command('getpic', function ($message) use ($bot) {
