@@ -22,20 +22,18 @@ $bot->command('help', function ($message) use ($bot) {
 // запускаем обработку
 $bot->run();
 
-$rows = PoemModel::getList();
-$items = new poemController;
-$items->actionList();
+//$rows = PoemModel::getList();
 ?>
 
-<div class="block">
-    <?php
-    foreach ($rows as $row) {
-        ?>
-        <div class="item">
-            <img src="<?=$row->image ?>" alt="">
-            <h3><?=$row->title?></h3>
-            <p><?=$row->text?></p>
-        </div>
-    <?php
-    }?>
-</div>
+<!--<div class="block">-->
+<!--    --><?php
+//    foreach ($rows as $row) {
+//        ?>
+<!--        <div class="item">-->
+<!--            <img src="--><?//=$row->image ?><!--" alt="">-->
+<!--            <h3>--><?//=$row->title?><!--</h3>-->
+<!--            <p>--><?//=$row->text?><!--</p>-->
+<!--        </div>-->
+<!--    --><?php
+//    }?>
+<!--</div>-->
