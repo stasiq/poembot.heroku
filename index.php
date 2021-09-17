@@ -5,6 +5,7 @@ echo 'he';
 require_once("vendor/autoload.php");
 use Faker\Factory as Faker;
 
+$faker = Faker::create('ru_RU');
 // создаем переменную бота
 $token = "1980530629:AAGp6UbT3J_tJrLDfvbwrw7CaAp3w21cXYk";
 $bot = new \TelegramBot\Api\Client($token);
@@ -26,15 +27,13 @@ $bot->command('help', function ($message) use ($bot) {
 });
 $bot->command('getpic', function ($message) use ($bot) {
     $answer = 'Изображение:';
-    $faker = Faker::create();
-
-    $pic = "<?= $faker->imageUrl(640, 480, 'animals', true)?>";
+    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
 $bot->command('bestcar', function ($message) use ($bot) {
     $answer = 'Зеленый матиз!:';
-    $pic = "<?= $faker->imageUrl(640, 480, 'animals', true)?>";
+    $pic = "https://a.d-cd.net/4a1f644s-960.jpg";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
