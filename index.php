@@ -3,8 +3,6 @@ header('Content-Type: text/html; charset=utf-8');
 echo 'he';
 // подключаемся к API
 require_once("vendor/autoload.php");
-use App\models\PoemModel as PoemModel;
-
 
 // создаем переменную бота
 $token = "1980530629:AAGp6UbT3J_tJrLDfvbwrw7CaAp3w21cXYk";
