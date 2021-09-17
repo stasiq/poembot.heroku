@@ -13,16 +13,15 @@ $bot = new \TelegramBot\Api\Client($token);
 // обязательное. Запуск бота
 $bot->command('start', function ($message) use ($bot) {
     $answer = 'Добро пожаловать! 
-    Чтобы увидеть доступные команды - "/help"';
+    Чтобы увидеть доступные команды - 
+    /help';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
 // помощь
 $bot->command('help', function ($message) use ($bot) {
     $answer = 'Команды:
-    Выбор настроения:
-    /fun - Веселое,
-    /sad - Грустное,
-    /soul - Загадочное,
+    /bestcar - Безоговорочно лучшая автомашина на свете!,
+    /getpic - Изображение,
     /help - помощь';
     $bot->sendMessage($message->getChat()->getId(), $answer);
 });
@@ -34,6 +33,12 @@ $bot->command('fun', function ($message) use ($bot) {
 $bot->command('getpic', function ($message) use ($bot) {
     $answer = 'Изображение:';
     $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $bot->sendPhoto($message->getChat()->getId(), $pic);
+});
+$bot->command('bestcar', function ($message) use ($bot) {
+    $answer = 'Зеленый матиз!:';
+    $pic = "https://a.d-cd.net/4a1f644s-960.jpg";
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });

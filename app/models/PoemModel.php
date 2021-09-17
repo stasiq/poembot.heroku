@@ -17,14 +17,13 @@ class PoemModel
     }
     public static function getList()
     {
-//        $db = Db::getConnect();
-//        $query = $db->query("SELECT * FROM poems");
-//        $rows = [];
-//        while ($row = $query->fetch(PDO::FETCH_OBJ)) {
-//            $rows[] = $row;
-//        }
-//        return $rows;
-        return [1,1,3,2];
+        $db = Db::getConnect();
+        $query = $db->query("SELECT * FROM poems");
+        $rows = [];
+        while ($row = $query->fetch(PDO::FETCH_OBJ)) {
+            $rows[] = $row;
+        }
+        return $rows;
     }
 
 }
