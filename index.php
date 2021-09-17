@@ -32,13 +32,13 @@ $bot->command('getpic', function ($message) use ($bot) {
     $bot->sendMessage($message->getChat()->getId(), $answer);
     $bot->sendPhoto($message->getChat()->getId(), $pic);
 });
-//$bot->command('sad', function ($message) use ($bot) {
-//    $row = new PoemModel::getItem('sad');
-//    $answer = $row[0];
-//    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
-//    $bot->sendMessage($message->getChat()->getId(), $answer);
-//    $bot->sendPhoto($message->getChat()->getId(), $pic);
-//});
+$bot->command('sad', function ($message) use ($bot) {
+    $row =  PoemModel::getItem('sad');
+    $answer = $row[0];
+    $pic = "https://icopydoc.ru/wp-content/uploads/fortelegrambot.jpg";
+    $bot->sendMessage($message->getChat()->getId(), $answer);
+    $bot->sendPhoto($message->getChat()->getId(), $pic);
+});
 $bot->command('bestcar', function ($message) use ($bot) {
     $answer = 'Зеленый матиз!:';
     $pic = "https://a.d-cd.net/4a1f644s-960.jpg";
