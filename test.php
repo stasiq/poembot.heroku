@@ -1,7 +1,6 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
-use App\controllers\poemController as poemController;
-use App\models\PoemModel as PoemModel;
+require_once("vendor/autoload.php");
+use App as PoemModel;
 
 ?>
 <!doctype html>
