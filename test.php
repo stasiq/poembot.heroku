@@ -37,6 +37,7 @@ use App\models\PoemModel as PoemModel;
 $PoemModel = new \App\models\PoemModel();
 var_dump($PoemModel);
 $rows = PoemModel::getList();
+var_dump($rows);
 
 ?>
 
