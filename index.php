@@ -37,7 +37,7 @@ $bot->command('getpic', function ($message) use ($bot) {
 });
 
 $bot->command('sad', function ($message) use ($bot) {
-    $row = PoemModel::getItem('sad');
+    $row = PoemModel::getItem(2);
     $title = $row[0];
     $text = $row[1];
     $pic = $row[2];
@@ -47,7 +47,7 @@ $bot->command('sad', function ($message) use ($bot) {
 });
 
 $bot->command('fun', function ($message) use ($bot) {
-    $row = PoemModel::getItem('fun');
+    $row = PoemModel::getItem(1);
     $title = $row[0];
     $text = $row[1];
     $pic = $row[2];
@@ -57,8 +57,8 @@ $bot->command('fun', function ($message) use ($bot) {
 });
 
 $bot->command('soul', function ($message) use ($bot) {
-    $row = PoemModel::getItem('soul');
-    $title = $row[0];
+    $row = PoemModel::getItem(3);
+    $title = $row->;
     $text = $row[1];
     $pic = $row[2];
     $bot->sendPhoto($message->getChat()->getId(), $pic);
