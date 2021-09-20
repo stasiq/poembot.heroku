@@ -1,4 +1,5 @@
 <?php
+
 header('Content-Type: text/html; charset=utf-8');
 
 require_once("vendor/autoload.php");
@@ -18,8 +19,8 @@ $bot->command('start', function ($message) use ($bot) {
 });
 
 $bot->command('help', function ($message) use ($bot) {
-    $answer =
-        'Выбор настроения:
+    $answer
+      = 'Выбор настроения:
         /fun - веселое,
         /sad - грустное,
         /soul - загадочное.
@@ -38,9 +39,9 @@ $bot->command('getpic', function ($message) use ($bot) {
 
 $bot->command('sad', function ($message) use ($bot) {
     $row = PoemModel::getItem(2);
-    $title = $row[0];
-    $text = $row[1];
-    $pic = $row[2];
+    $title = $row->title;
+    $text = $row->text;
+    $pic = $row->image;
     $bot->sendPhoto($message->getChat()->getId(), $pic);
     $bot->sendMessage($message->getChat()->getId(), $title);
     $bot->sendMessage($message->getChat()->getId(), $text);
@@ -48,9 +49,9 @@ $bot->command('sad', function ($message) use ($bot) {
 
 $bot->command('fun', function ($message) use ($bot) {
     $row = PoemModel::getItem(1);
-    $title = $row[0];
-    $text = $row[1];
-    $pic = $row[2];
+    $title = $row->title;
+    $text = $row->text;
+    $pic = $row->image;
     $bot->sendPhoto($message->getChat()->getId(), $pic);
     $bot->sendMessage($message->getChat()->getId(), $title);
     $bot->sendMessage($message->getChat()->getId(), $text);
@@ -58,19 +59,13 @@ $bot->command('fun', function ($message) use ($bot) {
 
 $bot->command('soul', function ($message) use ($bot) {
     $row = PoemModel::getItem(3);
-    $title = $row->;
-    $text = $row[1];
-    $pic = $row[2];
+    $title = $row->title;
+    $text = $row->text;
+    $pic = $row->image;
     $bot->sendPhoto($message->getChat()->getId(), $pic);
     $bot->sendMessage($message->getChat()->getId(), $title);
     $bot->sendMessage($message->getChat()->getId(), $text);
 });
 
-$bot->command('bestcar', function ($message) use ($bot) {
-    $answer = 'Зеленый матиз!:';
-    $pic = "https://a.d-cd.net/4a1f644s-960.jpg";
-    $bot->sendMessage($message->getChat()->getId(), $answer);
-    $bot->sendPhoto($message->getChat()->getId(), $pic);
-});
 
 $bot->run();
