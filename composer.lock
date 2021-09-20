@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de328b94dc10373707fff941cdc44ba8",
+    "content-hash": "37aa64b249ab204fb2f0bc0f622a7ec1",
     "packages": [
         {
             "name": "fakerphp/faker",
@@ -243,7 +243,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-pgsql": "*"
+    },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
 }
