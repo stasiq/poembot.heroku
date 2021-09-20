@@ -60,7 +60,7 @@ class PoemModel
     public static function getList()
     {
         $db = Db::getConnect();
-        $query = $db->query("SELECT * FROM poems");
+        $query = $db->query("select * from poems");
         $rows = [];
         while ($row = $query->fetch(PDO::FETCH_OBJ)) {
             $rows[] = $row;
