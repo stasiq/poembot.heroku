@@ -67,5 +67,14 @@ class PoemModel
         }
         return $rows;
     }
+    public static function testBd()
+    {
+        $db = Db::getConnect();
+        $query = $db->query('create table product(id serial primary key, name varchar(255))');
+        while ($row = $query->fetch(PDO::FETCH_OBJ)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 
 }
