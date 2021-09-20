@@ -4,5 +4,5 @@ require_once("vendor/autoload.php");
 
 use App\models\PoemModel as PoemModel;
 
-$rows = PoemModel::getItem(1);
-var_dump($rows);
+$rows = PoemModel::getList();
+dump($rows);
